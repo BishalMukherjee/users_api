@@ -24,6 +24,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def filter
+    arr_campaign_names = params[:campaign_names].is_a?(Array) ? params[:campaign_names] : params[:campaign_names].split(",")
+
+    if arr_campaign_names.present?
+      @users = User.filter_by_campaign_name(arr_campaign_names)
+    else
+      @users = User.all
+    end
+  end
+
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)

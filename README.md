@@ -22,3 +22,15 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+install ruby
+
+install rails
+
+install the gems - bundle install
+
+create database - rails db:create
+
+run migration - rails db:migrate
+
+start server - rails s
